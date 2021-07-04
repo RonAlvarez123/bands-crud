@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="style.css"?>
+<bands>
+    <band bandCode="1">
+        <bandName>Eraserhead</bandName>
+        <debut>1989</debut>
+        <hitSong>Ang Huling El Bimbo</hitSong>
+        <genres>
+            <genre>Rock</genre>
+        </genres>
+    </band>
+    <band bandCode="2">
+        <bandName>Parokya ni Edgar</bandName>
+        <debut>1993</debut>
+        <hitSong>Your Song</hitSong>
+        <genres>
+            <genre>Various</genre>
+        </genres>
+    </band>
+    <band bandCode="3">
+        <bandName>Rivermaya</bandName>
+        <debut>1994</debut>
+        <hitSong>Kisapmata</hitSong>
+        <genres>    
+            <genre>Indie Rock</genre>
+        </genres>
+    </band>
+    <band bandCode="4">
+        <bandName>Siakol</bandName>
+        <debut>1994</debut>
+        <hitSong>Gawin Langit ang Mundo</hitSong>
+        <genres>
+            <genre>Alternative Rock</genre>
+        </genres>
+    </band>
+    <band bandCode="5">
+        <bandName>Itchyworms</bandName>
+        <debut>1996</debut>
+        <hitSong>Di na muli</hitSong>
+        <genres>
+            <genre>Alternative Rock</genre>
+        </genres>
+    </band>
+    <band bandCode="6">
+        <bandName>Kamikazee</bandName>
+        <debut>2000</debut>
+        <hitSong>Huling Sayaw</hitSong>
+        <genres>
+            <genre>Heavy Metal</genre>
+        </genres>
+    </band>
+    <band bandCode="7">
+        <bandName>Silent Sanctuary</bandName>
+        <debut>2001</debut>
+        <hitSong>Ikaw Lamang</hitSong>
+        <genres>
+            <genre>Pop Rock</genre>
+        </genres>
+    </band>
+    <band bandCode="8">
+        <bandName>Callalily</bandName>
+        <debut>2005</debut>
+        <hitSong>Pansamantala</hitSong>
+        <genres>
+            <genre>Emo</genre>
+        </genres>
+    </band>
+    <band bandCode="9">
+        <bandName>December Avenue</bandName>
+        <debut>2007</debut>
+        <hitSong>Kahit Di Mo alam</hitSong>
+        <genres>
+            <genre>Alternative</genre>
+            <genre>Indie</genre>
+            <genre>Added</genre>
+        </genres>
+    </band>
+    <band bandCode="10">
+        <bandName>BGYO</bandName>
+        <debut>2021</debut>
+        <hitSong>The Light</hitSong>
+        <genres>
+            <genre>Hiphop</genre>
+        </genres>
+    </band>
+</bands>
