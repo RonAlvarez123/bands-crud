@@ -1,0 +1,117 @@
+.container {
+    height: 600px;
+    width: 900px;
+
+    header {
+        align-items: center;
+        background-color: rgb(55, 0, 179);
+        box-shadow: 0 0 5px gray;
+        display: flex;
+        justify-content: space-between;
+        padding: 30px;
+
+        .search {
+            display: grid;
+            grid-template-columns: minmax(200px, 400px) 40px;
+            grid-template-rows: 40px;
+
+            input {
+                border: 1px solid rgb(55, 0, 179);
+                border-right: none;
+                color: rgb(83, 83, 83);
+                font-weight: bold;
+                padding: 10px;
+            }
+
+            button {
+                background-color: white;
+                border: 1px solid rgb(55, 0, 179);
+                border-left: 1px solid gray;
+                cursor: pointer;
+
+                img {
+                    background-color: none;
+                    border: none;
+                    filter: brightness(0) invert(0.3);
+                    height: 50%;
+                    width: 50%;
+                }
+            }
+        }
+
+        .links {
+            align-items: center;
+            display: grid;
+            gap: 5px;
+            grid-template-rows: 40px;
+            grid-template-columns: repeat(2, auto);
+            justify-content: center;
+
+            
+            a {
+                border: 2px solid white;
+                border-radius: 3px;
+                box-shadow: 0 0 3px rgb(65, 65, 65);
+                color: white;
+                font-weight: bold;
+                padding: 8px 10px;
+                text-decoration: none;
+            }
+
+            .btn-update {
+                background-color: rgb(43, 180, 43);
+            }
+
+            .btn-delete {
+                background-color: rgb(223, 39, 39);
+            }
+        }
+    }
+
+    main {
+        font-weight: bold;
+        margin-top: 15px;
+        padding: 10px 30px;
+
+        section {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: 7% 23% 12% 28% 30%;
+            padding: 10px 30px;
+
+        }
+
+        section.header {
+            background-color: #eee;
+            box-shadow: 0 0 2px gray;
+            color: rgb(83, 83, 83);
+            margin-bottom: 10px;
+            gap: 7px;
+        }
+
+        .bands {
+            max-height: 300px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+    }
+
+    footer {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+        margin-top: 35px;
+
+        a {
+            background-color: rgb(55, 0, 179);
+            border: 2px solid rgb(55, 0, 179);
+            border-radius: 50px;
+            box-shadow: 0 0 3px black;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            text-decoration: none;
+            transform: scale(1.2);
+        }
+    }
+}
