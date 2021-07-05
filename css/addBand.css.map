@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAC;EACP,cAAc,EAAE,IAAI;EACpB,KAAK,EAAE,KAAK;CACf",
+    "sources": [
+        "../scss/addBand.scss"
+    ],
+    "names": [],
+    "file": "addBand.css"
+}
