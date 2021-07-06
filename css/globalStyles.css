@@ -9,11 +9,20 @@
 }
 
 body {
-  align-items: center;
-  background-image: linear-gradient(0deg, #158897, #e8e9a6);
-  display: flex;
-  justify-content: center;
+  background-image: url("../img/opm.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 100vh;
+}
+
+.main-container {
+  align-items: center;
+  background-color: rgba(252, 247, 175, 0.5);
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
 }
 
 .container {
@@ -33,11 +42,236 @@ body {
   transform: scale(1);
 }
 
+.a-click {
+  display: inline-block;
+  transition: transform 100ms;
+}
+
+.a-click:active {
+  transform: scale(1);
+}
+
+.a-click-on {
+  transform: scale(1.1);
+}
+
 .text-danger {
   color: red !important;
 }
 
 .input-danger {
   border: 2px solid red !important;
+}
+
+.notification-container {
+  overflow: hidden;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+.notification-container .notification {
+  border-radius: 5px;
+  box-shadow: 0 0 3px  black;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 10px;
+  padding: 10px 20px;
+  transform: translateY(150px);
+  animation-duration: 5s;
+  animation-name: notification;
+}
+
+.notification-container .notification.notification-add {
+  background-color: #9e76fa;
+  border: 2px solid #6c53a7;
+  color: #3e2970;
+}
+
+.notification-container .notification.notification-update {
+  background-color: #96df73;
+  border: 2px solid #76b15b;
+  color: #325323;
+}
+
+.notification-container .notification.notification-delete {
+  background-color: #f1aaaa;
+  border: 2px solid #af6464;
+  color: #df2727;
+}
+
+@keyframes notification {
+  0% {
+    display: block;
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  100% {
+    display: none;
+    opacity: 0;
+    transform: translateY(150px);
+  }
+}
+
+.form-submit h1 {
+  background-color: #3700b3;
+  color: white;
+  font-size: 1.7rem;
+  margin-bottom: 20px;
+  padding: 20px;
+  text-align: center;
+  text-shadow: 0 0 3px black;
+}
+
+.form-submit > div, .form-submit .multi-input div {
+  display: grid;
+  padding: 5px 30px;
+}
+
+.form-submit div {
+  font-weight: bold;
+}
+
+.form-submit div label {
+  color: #535353;
+  font-size: .9rem;
+  margin-bottom: 2px;
+}
+
+.form-submit div label span {
+  font-size: .8rem;
+}
+
+.form-submit div select {
+  appearance: none;
+}
+
+.form-submit div input, .form-submit div select {
+  border: 2px solid #9c9c9c;
+  border-radius: 3px;
+  color: #3d3d3d;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 10px;
+  transition: transform 100ms;
+}
+
+.form-submit div input:focus, .form-submit div select:focus {
+  border: 2px solid #3c7da3;
+  transform: scale(1.03);
+}
+
+.form-submit div input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.form-submit div input::-webkit-outer-spin-button,
+.form-submit div input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.form-submit div p {
+  font-size: .7rem;
+  font-weight: normal;
+  margin-top: 2px;
+  height: 12px;
+}
+
+.form-submit div button {
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px;
+  transition: background-color 250ms, color 250ms, transform 100ms;
+}
+
+.form-submit div button:active {
+  transform: scale(0.9);
+}
+
+.form-submit div button.btn-add {
+  background-color: #3700b3;
+  border: 2px solid #3700b3;
+}
+
+.form-submit div button.btn-add:hover {
+  background-color: white;
+  color: #3700b3;
+}
+
+.form-submit div button.btn-update {
+  background-color: #2bb42b;
+  border: 2px solid #2bb42b;
+}
+
+.form-submit div button.btn-update:hover {
+  background-color: white;
+  color: #2bb42b;
+}
+
+.form-submit div button.btn-delete {
+  background-color: #df2727;
+  border: 2px solid #df2727;
+}
+
+.form-submit div button.btn-delete:hover {
+  background-color: white;
+  color: #df2727;
+}
+
+.form-submit div h4, .form-submit div a {
+  text-align: center;
+}
+
+.form-submit div h4 {
+  margin: 15px 0;
+}
+
+.form-submit .multi-input {
+  gap: 20px;
+  grid-template-rows: auto;
+  grid-template-columns: auto auto;
+}
+
+.form-submit .multi-input div {
+  padding: 0;
+  width: 90%;
+}
+
+.form-submit .multi-input div input {
+  width: 100%;
+}
+
+.form-submit div.genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px 0;
+}
+
+.form-submit div.genres article.pill {
+  background-color: #bbbbbb;
+  border-radius: 2px;
+  color: #292929;
+  cursor: pointer;
+  font-size: .8rem;
+  padding: 10px;
+  text-transform: capitalize;
+}
+
+.form-submit div.genres article.pill:hover {
+  transform: scale(1.08);
+}
+
+.hide {
+  display: none !important;
 }
 /*# sourceMappingURL=globalStyles.css.map */
