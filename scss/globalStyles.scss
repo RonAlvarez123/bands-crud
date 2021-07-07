@@ -9,7 +9,6 @@
 }
 
 body {
-    // background-image: linear-gradient(0deg, #158897, #e8e9a6);
     background-image: url('../img/opm.jpg');
     background-position: center;
     background-size: cover;
@@ -130,7 +129,6 @@ body {
 
     h1 {
         background-color: rgb(55, 0, 179);
-        // border: 1px solid red;
         color: white;
         font-size: 1.7rem;
         margin-bottom: 20px;
@@ -140,7 +138,6 @@ body {
     }
 
     & > div, .multi-input div {
-        // border: 1px solid green;
         display: grid;
         padding: 5px 30px;
     }
@@ -286,6 +283,6 @@ body {
     display: none !important;
 }
 
-// .show {
-//     display: block !important;
-// }
+.highlight {
+    background-color: rgb(248, 227, 39);
+}

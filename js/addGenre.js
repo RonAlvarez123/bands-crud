@@ -19,5 +19,3 @@ function addGenre(e) {
 
     }
 }
-
-// console.log(inputGenre);

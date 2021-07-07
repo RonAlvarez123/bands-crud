@@ -274,4 +274,8 @@ body {
 .hide {
   display: none !important;
 }
+
+.highlight {
+  background-color: #f8e327;
+}
 /*# sourceMappingURL=globalStyles.css.map */
