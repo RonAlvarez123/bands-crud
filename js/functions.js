@@ -37,10 +37,12 @@ function fetchAllBands() {
 
 function findBandMatches(word, bandData) {
     let result = [];
+    const regex = new RegExp(word, 'gi');
     bandData.allBandNames.forEach((item, index) => {
-        if (item.includes(word)) {
+        if (item.match(regex)) {
             result.push([item, bandData.allBands[index].debut]);
         }
     });
+
     return result;
 }
