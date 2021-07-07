@@ -8,14 +8,18 @@ $xml->load('IconicOpmBands.xml');
 $bandsXml = $xml->getElementsByTagName('band');
 $bands = [];
 
-for ($i = 0; $i < count($bandsXml); $i++) {
-    $bands[$i] = [
-        'bandCode' => $bandsXml[$i]->getAttribute('bandCode'),
-        'bandName' => $bandsXml[$i]->getElementsByTagName('bandName')->item(0)->nodeValue,
-        'debut' => $bandsXml[$i]->getElementsByTagName('debut')->item(0)->nodeValue,
-        'hitSong' => $bandsXml[$i]->getElementsByTagName('hitSong')->item(0)->nodeValue,
-        'genres' => getGenres($bandsXml[$i]->getElementsByTagName("genre"))
-    ];
+if (isset($_GET['search'])) {
+    for ($i = 0; $i < count($bandsXml); $i++) {
+        $bandName = strtolower($bandsXml[$i]->getElementsByTagName('bandName')->item(0)->nodeValue);
+
+        if (strpos($bandName, strtolower($_GET['search'])) !== false) {
+            include('./partials/appendBand.php');
+        }
+    }
+} else {
+    for ($i = 0; $i < count($bandsXml); $i++) {
+        include('./partials/appendBand.php');
+    }
 }
 
 ?>
@@ -38,8 +42,11 @@ for ($i = 0; $i < count($bandsXml); $i++) {
     <div class="main-container">
         <div class="container">
             <header>
-                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="" class="search">
-                    <input type="text" placeholder="Search band...">
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="GET" class="search">
+                    <div class="search-container">
+                        <input type="text" placeholder="Search band..." name="search" autocomplete="off">
+                        <ul class="search-results hide"></ul>
+                    </div>
                     <button type="submit" class="btn-click">
                         <img src="svg/search-solid.svg" alt="">
                     </button>
@@ -58,17 +65,21 @@ for ($i = 0; $i < count($bandsXml); $i++) {
                     <p>HitSong</p>
                     <p>Genres</p>
                 </section>
-                <div class="bands">
-                    <?php foreach ($bands as $band) { ?>
-                        <section>
-                            <p><?php echo $band['bandCode'] ?></p>
-                            <p><?php echo $band['bandName'] ?></p>
-                            <p><?php echo $band['debut'] ?></p>
-                            <p><?php echo $band['hitSong'] ?></p>
-                            <p><?php echo $band['genres'] ?></p>
-                        </section>
-                    <?php } ?>
-                </div>
+                <?php if (count($bands) > 0) { ?>
+                    <div class="bands">
+                        <?php foreach ($bands as $band) { ?>
+                            <section>
+                                <p><?php echo $band['bandCode'] ?></p>
+                                <p><?php echo $band['bandName'] ?></p>
+                                <p><?php echo $band['debut'] ?></p>
+                                <p><?php echo $band['hitSong'] ?></p>
+                                <p><?php echo $band['genres'] ?></p>
+                            </section>
+                        <?php } ?>
+                    </div>
+                <?php } else { ?>
+                    <h2>No Results Found</h2>
+                <?php } ?>
             </main>
 
             <footer>
@@ -77,7 +88,10 @@ for ($i = 0; $i < count($bandsXml); $i++) {
         </div>
     </div>
 
-    <script src="js/a_click_jquery.js"></script>
+    <script src="js/jquery_anchorClick.js"></script>
+    <script src="js/jquery_searchResultVisibility.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/jquery_fetchSearchResults.js"></script>
 </body>
 
 </html>
