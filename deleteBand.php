@@ -14,11 +14,11 @@ if (isset($_POST['deleteBand'])) {
             if ($band->getAttribute('bandCode') == $_POST['bandCode']) {
                 $xml->getElementsByTagName('bands')->item(0)->removeChild($band);
                 $xml->save('IconicOpmBands.xml');
-
-                $success = true;
-                unset($_POST);
             }
         }
+
+        $success = true;
+        unset($_POST);
     }
 }
 
