@@ -10,10 +10,6 @@ if (isset($_POST['addBand'])) {
     }
 
     if (!array_filter($emptyFields)) {
-
-        // var_dump($_POST['genres']);
-        // exit;
-
         $newBand['code'] = $_POST['bandCode'];
         $newBand['genres'] = explode(", ", $_POST['genres']);
 
@@ -52,7 +48,7 @@ if (isset($_POST['addBand'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/globalStyles.css">
-    <link rel="stylesheet" href="css/addBand.css">
+    <link rel="stylesheet" href="css/form.css">
     <title>Add Band</title>
 </head>
 
@@ -96,7 +92,7 @@ if (isset($_POST['addBand'])) {
                 </div>
             </div>
             <div>
-                <button type="submit" name="addBand">CREATE</button>
+                <button type="submit" name="addBand" class="btn-add">CREATE</button>
                 <h4>or</h4>
                 <a href="index.php">Go Back</a>
             </div>
@@ -104,7 +100,7 @@ if (isset($_POST['addBand'])) {
 
         <?php if ($success) { ?>
             <div class="notification-container">
-                <div class="notification notification-success">
+                <div class="notification notification-add">
                     <p>Band Added!</p>
                 </div>
             </div>
